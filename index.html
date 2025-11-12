@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enigmas de Hogwarts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Partículas mágicas -->
+    <div id="particles"></div>
+
+    <div class="container">
+        <!-- Tela Inicial -->
+        <div id="startScreen" class="start-screen">
+            <div class="title-box">
+                <h1 class="main-title">⚡ Enigmas de Hogwarts ⚡</h1>
+                <p class="subtitle">O Desafio dos Marotos</p>
+            </div>
+
+            <div class="intro-box">
+                <h2 class="intro-title">Bem-vindo(a), Bruxo(a)!</h2>
+                
+                <p class="intro-text">
+                    Você encontrou o Mapa do Maroto e descobriu um desafio secreto deixado por 
+                    Tiago Potter, Sirius Black, Remo Lupin e Pedro Pettigrew.
+                </p>
+                
+                <p class="intro-text">
+                    Para provar que é digno de conhecer os segredos de Hogwarts, você precisará 
+                    decifrar <strong>10 enigmas progressivos</strong> relacionados a 
+                    <strong>siglas conectadas</strong> e características do mundo mágico.
+                </p>
+                
+                <div class="rules-box">
+                    <p class="rules-title">📜 Regras do Desafio:</p>
+                    <ul class="rules-list">
+                        <li>• Cada nível tem <strong>3 tentativas</strong></li>
+                        <li>• Pontos variam de <strong>100 a 300</strong> por nível</li>
+                        <li>• Dicas custam <strong>-10 pontos</strong></li>
+                        <li>• Dificuldade aumenta progressivamente</li>
+                        <li>• Desafio completo: <strong>1.850 pontos possíveis</strong></li>
+                    </ul>
+                </div>
+                
+                <p class="intro-text" style="text-align: center; text-indent: 0; font-style: italic;">
+                    Use as dicas se necessário, mas elas custarão parte de sua pontuação!
+                </p>
+
+                <button class="start-button" onclick="startGame()">
+                    🎮 Iniciar Desafio
+                </button>
+            </div>
+        </div>
+
+        <!-- Tela de Jogo -->
+        <div id="gameScreen" class="game-screen">
+            <div class="game-header">
+                <h1 class="game-title">⚡ Enigmas de Hogwarts ⚡</h1>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-label">Fase</div>
+                    <div class="info-value" id="levelDisplay">1/10</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Pontuação</div>
+                    <div class="info-value" id="scoreDisplay">0</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Tentativas</div>
+                    <div class="info-value" id="attemptsDisplay">3</div>
+                </div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+            </div>
+
+            <div class="game-card">
+                <div class="rotating-glow"></div>
+                
+                <div class="level-header">
+                    <h2 class="level-title" id="levelTitle">Nível 1:</h2>
+                    <span class="difficulty-badge" id="difficultyBadge">Fácil</span>
+                </div>
+
+                <div class="question-box">
+                    <p class="description" id="description"></p>
+                    <p class="question" id="question"></p>
+                </div>
+
+                <div class="hint-box" id="hintBox">
+                    <p class="hint-title">💡 Dica:</p>
+                    <p class="hint-text" id="hintText"></p>
+                </div>
+
+                <input 
+                    type="text" 
+                    class="answer-input" 
+                    id="answerInput" 
+                    placeholder="Digite sua resposta aqui..."
+                    onkeypress="if(event.key === 'Enter') checkAnswer()"
+                >
+
+                <div class="button-grid">
+                    <button class="game-button hint-button" id="hintButton" onclick="showHint()">
+                        🧠 Pedir Dica (-10)
+                    </button>
+                    <button class="game-button check-button" onclick="checkAnswer()">
+                        ✨ Verificar Resposta
+                    </button>
+                </div>
+
+                <div class="feedback-box" id="feedbackBox"></div>
+            </div>
+        </div>
+
+        <!-- Tela de Conclusão -->
+        <div id="completeScreen" class="complete-screen">
+            <div class="complete-card">
+                <div class="trophy">🏆</div>
+                <h1 class="complete-title">🎉 Desafio Concluído! 🎉</h1>
+                
+                <div class="stars" id="starsDisplay"></div>
+                
+                <div class="score-box">
+                    <p class="final-score" id="finalScore">0 pontos</p>
+                    <p class="score-detail" id="scoreDetail"></p>
+                </div>
+                
+                <p class="final-message" id="finalMessage"></p>
+                
+                <button class="restart-button" onclick="restartGame()">
+                    🔄 Jogar Novamente
+                </button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>✨ Criado por Debbie Matt - Inspirado no universo de Harry Potter ✨</p>
+            <p>Copyright © 2022-2025</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
