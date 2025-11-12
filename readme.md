@@ -1,4 +1,4 @@
-# Enigmas de Hogwarts - O Desafio dos Marotos
+# Code And Riddle Acronyms - O mistério não revelado
 
 ![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
@@ -12,7 +12,7 @@ Jogo educativo de decodificação de siglas baseado no universo Harry Potter, de
 
 ## 🎮 Sobre o Jogo
 
-**Enigmas de Hogwarts** é um desafio interativo onde você precisa decifrar 10 enigmas progressivos relacionados a siglas, códigos e características do mundo mágico de Harry Potter. Teste seus conhecimentos e prove que é digno de conhecer os segredos deixados pelos Marotos!
+**Code And Riddle Acronyms** é um desafio interativo onde você precisa decifrar 10 enigmas progressivos relacionados a siglas, códigos e características do mundo mágico de Harry Potter. Teste seus conhecimentos e prove que é digno de conhecer os segredos deixados pelos Marotos!
 
 ## 🚀 Demo
 
